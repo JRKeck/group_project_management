@@ -1,5 +1,10 @@
 $(document).ready(function() {
   $('.gen-project').on('click', function() {
+    wholeTeam = [];
+    $('.employee-header').html('');
+    $('.employees .an-employee').remove();
+    $('.add-employee').hide();
+    $(".sprints").html("");
     project = {
       name : makeName(),
       frontend : randomNum(),
@@ -52,7 +57,7 @@ function addEmployee (){
       console.log(empObj);
       wholeTeam.push(empObj);
       $('.employee-header').html('Employees assigned to project:');
-      $('.employees').append('<div class="employee">'+empObj.employeeName+': '+empObj.employeeSkill + ' Scrum Score: ' + empObj.employeeScrumNum + '</div>');
+      $('.employees').append('<div class="an-employee">'+empObj.employeeName+': '+empObj.employeeSkill + ' Scrum Score: ' + empObj.employeeScrumNum + '</div>');
       $('.add-employee').show();
     },
     complete: function(){
